@@ -42,7 +42,15 @@ namespace EnterpriseComputingTeamProject1
                 //query the Students Table using EF and LINQ
 
                 var Games = (from allGames in db.Games
-                             select new { allGames.GameName, allGames.GameDescription, allGames.NumberOfSpectators });
+                             where allGames.Week == 1
+
+                             select new {
+                                 allGames.Week,
+                                 allGames.GameName,
+                                 allGames.GameDescription,
+                                 allGames.NumberOfSpectators,
+                                 TotalScore = allGames.Team1Score + allGames.Team2Score,
+                                 Winner = ((allGames.Team1Score - allGames.Team2Score > 0) ? allGames.Team1ID : allGames.Team2ID)});
 
                 //bind the result to the GridView
                 GamesGridView.DataSource = Games.ToList();
