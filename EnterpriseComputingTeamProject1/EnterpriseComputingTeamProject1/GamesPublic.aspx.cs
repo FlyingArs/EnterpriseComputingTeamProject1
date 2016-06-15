@@ -40,8 +40,9 @@ namespace EnterpriseComputingTeamProject1
             {
 
                 //query the Students Table using EF and LINQ
+
                 var Games = (from allGames in db.Games
-                             select new Game {allGames.GameName});
+                             select new { allGames.GameName, allGames.GameDescription, allGames.NumberOfSpectators });
 
                 //bind the result to the GridView
                 GamesGridView.DataSource = Games.ToList();
