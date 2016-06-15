@@ -6,7 +6,7 @@
    File Description: This is the master page for non secure content
     
     --%>
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteNonSecure.Master.cs" Inherits="SiteNonSecure" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteNonSecure.Master.cs" Inherits="EnterpriseComputingTeamProject1.SiteNonSecure" %>
 <%@ Register Src="~/User_Controls/NavbarNonSecure.ascx" TagName="NavbarNonSecure" TagPrefix="bs3" %>
 <!DOCTYPE html>
 

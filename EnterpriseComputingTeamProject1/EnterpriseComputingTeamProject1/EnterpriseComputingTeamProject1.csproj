@@ -70,6 +70,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="GamesPublic.aspx" />
     <Content Include="InputForm.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
@@ -92,7 +94,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -103,6 +104,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="TeamsPublic.aspx" />
+    <Content Include="User_Controls\Jumbotron.ascx" />
     <Content Include="User_Controls\NavbarNonSecure.ascx" />
     <Content Include="User_Controls\NavbarSecure.ascx" />
     <Content Include="Scripts\app.js" />
@@ -119,6 +122,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GamesPublic.aspx.cs">
+      <DependentUpon>GamesPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GamesPublic.aspx.designer.cs">
+      <DependentUpon>GamesPublic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InputForm.aspx.cs">
       <DependentUpon>InputForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,13 +150,6 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +163,20 @@
     </Compile>
     <Compile Include="SiteNonSecure.Master.designer.cs">
       <DependentUpon>SiteNonSecure.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TeamsPublic.aspx.cs">
+      <DependentUpon>TeamsPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeamsPublic.aspx.designer.cs">
+      <DependentUpon>TeamsPublic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\Jumbotron.ascx.cs">
+      <DependentUpon>Jumbotron.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_Controls\Jumbotron.ascx.designer.cs">
+      <DependentUpon>Jumbotron.ascx</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\NavbarNonSecure.ascx.cs">
       <DependentUpon>NavbarNonSecure.ascx</DependentUpon>

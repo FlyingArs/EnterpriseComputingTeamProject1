@@ -7,7 +7,7 @@
     
     --%>
 
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Site" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="EnterpriseComputingTeamProject1.Site" %>
 <%@ Register Src="~/User_Controls/NavbarSecure.ascx" TagName="NavbarSecure" TagPrefix="bs3" %>
 <!DOCTYPE html>
 

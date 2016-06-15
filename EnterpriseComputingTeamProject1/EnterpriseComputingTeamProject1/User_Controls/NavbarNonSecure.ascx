@@ -26,8 +26,8 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i> Home</a></li>
-                <li id="games" runat="server"><a href="Games.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
-                <li id="teams" runat="server"><a href="Teams.aspx"><i class="fa fa-futbol-o fa-lg"></i> Teams</a></li>
+                <li id="games" runat="server"><a href="GamesPublic.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
+                <li id="teams" runat="server"><a href="TeamsPublic.aspx"><i class="fa fa-futbol-o fa-lg"></i> Teams</a></li>
                 <li id="login" runat="server"><a href="Login.aspx"><i class="fa fa-phone fa-lg"></i> Log In</a></li>
             </ul>
         </div>
