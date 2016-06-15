@@ -9,7 +9,7 @@
 
 
 
-public partial class Site {
+public partial class SiteNonSecure {
     
     /// <summary>
     /// head control.
@@ -36,7 +36,7 @@ public partial class Site {
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::EnterpriseComputingTeamProject1.Navbar PrimaryNav;
+    protected global::EnterpriseComputingTeamProject1.User_Controls.NavbarNonSecure PrimaryNav;
     
     /// <summary>
     /// MainContent control.

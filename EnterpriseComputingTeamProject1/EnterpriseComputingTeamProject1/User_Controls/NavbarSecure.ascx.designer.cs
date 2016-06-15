@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EnterpriseComputingTeamProject1
-{
-
-
-    public partial class Navbar
-    {
-
+namespace EnterpriseComputingTeamProject1 {
+    
+    
+    public partial class Navbar {
+        
         /// <summary>
         /// home control.
         /// </summary>
@@ -22,14 +20,32 @@ namespace EnterpriseComputingTeamProject1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl home;
-
+        
         /// <summary>
-        /// contact control.
+        /// games control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contact;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl games;
+        
+        /// <summary>
+        /// teams control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teams;
+        
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout;
     }
 }

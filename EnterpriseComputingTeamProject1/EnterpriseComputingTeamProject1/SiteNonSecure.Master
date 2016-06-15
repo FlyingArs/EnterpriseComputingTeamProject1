@@ -6,8 +6,8 @@
    File Description: This is the master page for non secure content
     
     --%>
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EnterpriseComputingTeamProject1.Site" %>
-<%@ Register Src="~/User_Controls/NavbarNonSecure.ascx" TagName="NavbarSecure" TagPrefix="bs3" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteNonSecure.Master.cs" Inherits="SiteNonSecure" %>
+<%@ Register Src="~/User_Controls/NavbarNonSecure.ascx" TagName="NavbarNonSecure" TagPrefix="bs3" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -26,7 +26,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <bs3:NavbarSecure runat="server"></bs3:NavbarSecure>
+        <bs3:NavbarNonSecure runat="server" ID="PrimaryNav"></bs3:NavbarNonSecure>
     <div>
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
@@ -37,6 +37,8 @@
     <!-- JavaScript -->
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/app.js"></script>
 </body>
 </html>
+
 

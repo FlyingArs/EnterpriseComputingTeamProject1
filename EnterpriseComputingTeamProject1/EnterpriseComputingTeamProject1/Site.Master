@@ -7,7 +7,7 @@
     
     --%>
 
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="EnterpriseComputingTeamProject1.Site" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Site" %>
 <%@ Register Src="~/User_Controls/NavbarSecure.ascx" TagName="NavbarSecure" TagPrefix="bs3" %>
 <!DOCTYPE html>
 
@@ -27,7 +27,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <bs3:NavbarSecure runat="server"></bs3:NavbarSecure>
+        <bs3:NavbarSecure runat="server" ID="PrimaryNav"></bs3:NavbarSecure>
     <div>
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
@@ -38,5 +38,6 @@
     <!-- JavaScript -->
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/app.js"></script>
 </body>
 </html>

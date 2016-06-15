@@ -19,6 +19,7 @@ namespace EnterpriseComputingTeamProject1
         {
             SetActivePage();
         }
+
         /**
          * This method adds a css class of "active" to list items related
          * to navigation links of each page
@@ -26,7 +27,6 @@ namespace EnterpriseComputingTeamProject1
          * @method SetActivePage
          * @return {void}
          */
-
         private void SetActivePage()
         {
             switch (Page.Title)
@@ -34,8 +34,11 @@ namespace EnterpriseComputingTeamProject1
                 case "Home Page":
                     home.Attributes.Add("class", "active");
                     break;
-                case "Contact":
-                    contact.Attributes.Add("class", "active");
+                case "Games":
+                    games.Attributes.Add("class", "active");
+                    break;
+                case "Teams":
+                    teams.Attributes.Add("class", "active");
                     break;
             }
         }
