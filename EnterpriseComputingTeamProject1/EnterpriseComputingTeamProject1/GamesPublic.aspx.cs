@@ -50,7 +50,7 @@ namespace EnterpriseComputingTeamProject1
                                  allGames.GameDescription,
                                  allGames.NumberOfSpectators,
                                  TotalScore = allGames.Team1Score + allGames.Team2Score,
-                                 Winner = ((allGames.Team1Score - allGames.Team2Score > 0) ? allGames. : allGames.Team2)});
+                                 Winner = ((allGames.Team1Score - allGames.Team2Score > 0) ? allGames.Team1ID : allGames.Team2ID)});
 
                 //bind the result to the GridView
                 GamesGridView.DataSource = Games.ToList();
