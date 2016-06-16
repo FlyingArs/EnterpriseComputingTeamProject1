@@ -7,7 +7,7 @@
     
     --%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/SiteNonSecure.Master" AutoEventWireup="true" CodeBehind="TeamsPublic.aspx.cs" Inherits="EnterpriseComputingTeamProject1.TeamsPublic" %>
+<%@ Page Title="Teams" Language="C#" MasterPageFile="~/SiteNonSecure.Master" AutoEventWireup="true" CodeBehind="TeamsPublic.aspx.cs" Inherits="EnterpriseComputingTeamProject1.TeamsPublic" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -32,8 +32,7 @@
                     <Columns>
                         <asp:BoundField DataField="TeamID" HeaderText="Team ID" Visible="true" SortExpression="TeamID" />
                         <asp:BoundField DataField="TeamName" HeaderText="Department Name" Visible="true" SortExpression="TeamName" />
-                        <asp:BoundField DataField="PointsScored" HeaderText="Points Scored" Visible="true" SortExpression="PointsScored" />
-                        <asp:BoundField DataField="PointsLost" HeaderText="Points Lost" Visible="true" SortExpression="PointsLost" />
+                        <asp:BoundField DataField="TeamDescription" HeaderText="Description" Visible="true" SortExpression="TeamDescription" />
                     </Columns>
                 </asp:GridView>
 
