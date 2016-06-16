@@ -3,7 +3,7 @@
     Fei Wang 200278460
     Siqian Yu 200286902
    Date Modified: 06-07-2016
-   File Description: This is nav bar when the user logs in
+   File Description: This is nav bar for the web application
     
     --%>
 
@@ -23,12 +23,17 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
             <ul class="nav navbar-nav navbar-right">
                 <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                <asp:PlaceHolder runat="server" ID="PublicPlaceHolder">
+                    <li id="login" runat="server"><a href="/Login.aspx"><i class="fa fa-sign-in fa-lg"></i> Login</a></li>
+                    <li id="register" runat="server"><a href="/Register.aspx"><i class="fa fa-user-plus fa-lg"></i> Register</a></li>
+                </asp:PlaceHolder>                               
                 <li id="games" runat="server"><a href="Games.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
                 <li id="teams" runat="server"><a href="Teams.aspx"><i class="fa fa-futbol-o fa-lg"></i> Teams</a></li>
-                <li id="logout" runat="server"><a href="#"><i class="fa fa-phone fa-lg"></i> Logout</a></li>
+                <asp:PlaceHolder runat="server" ID="SecurePlaceHolder">
+                    <li id="logout" runat="server"><a href="Logout.aspx"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                </asp:PlaceHolder>               
             </ul>
         </div>
         <!-- /.navbar-collapse -->

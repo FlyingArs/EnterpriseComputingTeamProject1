@@ -22,6 +22,33 @@ namespace EnterpriseComputingTeamProject1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl home;
         
         /// <summary>
+        /// PublicPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PublicPlaceHolder;
+        
+        /// <summary>
+        /// login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login;
+        
+        /// <summary>
+        /// register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl register;
+        
+        /// <summary>
         /// games control.
         /// </summary>
         /// <remarks>
@@ -38,6 +65,15 @@ namespace EnterpriseComputingTeamProject1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl teams;
+        
+        /// <summary>
+        /// SecurePlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder SecurePlaceHolder;
         
         /// <summary>
         /// logout control.

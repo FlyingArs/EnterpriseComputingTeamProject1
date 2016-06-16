@@ -7,8 +7,8 @@ using System.Web.UI.WebControls;
 
 /**
  * @author: David Yu
- * @date: May 27, 2016
- * @version: 0.0.1 - added the SetActivePage Method
+ * @date: June 16, 2016
+ * @version: 0.0.2 - modified page links
  */
 
 namespace EnterpriseComputingTeamProject1
@@ -33,6 +33,12 @@ namespace EnterpriseComputingTeamProject1
             {
                 case "Home Page":
                     home.Attributes.Add("class", "active");
+                    break;
+                case "Login":
+                    login.Attributes.Add("class", "active");
+                    break;
+                case "Register":
+                    register.Attributes.Add("class", "active");
                     break;
                 case "Games":
                     games.Attributes.Add("class", "active");

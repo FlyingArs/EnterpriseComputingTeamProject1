@@ -6,20 +6,7 @@
    File Description: This is the registration page for admin who can edit the pages. 
     
     --%>
+<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="EnterpriseComputingTeamProject1.Register" %>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="EnterpriseComputingTeamProject1.Register" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+</asp:Content>

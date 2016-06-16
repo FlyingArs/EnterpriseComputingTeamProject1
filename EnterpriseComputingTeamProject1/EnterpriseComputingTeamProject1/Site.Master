@@ -2,8 +2,8 @@
    Authors & Student Number:
     Fei Wang 200278460
     Siqian Yu 200286902
-   Date Modified: 06-07-2016
-   File Description: This is the master page for secure content 
+   Date Modified: 06-16-2016
+   File Description: This is the master page
     
     --%>
 
@@ -28,11 +28,16 @@
 <body>
     <form id="form1" runat="server">
         <bs3:NavbarSecure runat="server" ID="PrimaryNav"></bs3:NavbarSecure>
-    <div>
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
-        </asp:ContentPlaceHolder>
-    </div>
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="footer navbar navbar-fixed-bottom bg-info">
+            <div class="container">
+                <p class="text-muted">&copy; 2016 Contoso University</p>
+            </div>
+        </footer>
     </form>
 
     <!-- JavaScript -->

@@ -7,7 +7,7 @@
     
     --%>
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/SiteNonSecure.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="EnterpriseComputingTeamProject1.Default" %>
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="EnterpriseComputingTeamProject1.Default" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <bs3:Jumbotron runat="server" ID="Jumbotron">
@@ -17,8 +17,8 @@
             <br />
             <br />
             <div class="text-center">
-                <a href="GamesPublic.aspx" class="btn btn-primary btn-lg">Games Stats</a>
-                <a href="TeamsPublic.aspx" class="btn btn-primary btn-lg">Teams Stats</a>
+                <a href="Games.aspx" class="btn btn-primary btn-lg">Games Stats</a>
+                <a href="Teams.aspx" class="btn btn-primary btn-lg">Teams Stats</a>
             </div>
         </BodyContent>
     </bs3:Jumbotron>
