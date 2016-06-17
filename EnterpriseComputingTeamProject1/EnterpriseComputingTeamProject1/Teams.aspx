@@ -15,24 +15,24 @@
             <div class="col-md-offest-2 col-md-8">
                 <h1>Teams Stats</h1>
 
-                <!-- Drop Down List for Page Size-->
-                <label for="PageSizeDropDownList">Records per page: </label>
-                <asp:DropDownList ID="PageSizeDropDownList" runat="server" AutoPostBack="true" 
-                    CssClass="btn btn-default btn-sm dropdown-toggle" OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
-                    <asp:ListItem Text="5" Value="5" />
-                    <asp:ListItem Text="10" Value="10" />
-                    <asp:ListItem Text="All" Value="10000" />
+                <!-- Drop Down List for Week Selection-->
+                <label for="PageSizeDropDownList">Select Week: </label>
+                <asp:DropDownList ID="WeekDropDownList" runat="server" AutoPostBack="true"
+                    CssClass="btn btn-default btn-sm dropdown-toggle" OnSelectedIndexChanged="WeekDropDownList_SelectedIndexChanged">
+                    <asp:ListItem Text="Week 1" Value="1" />
+                    <asp:ListItem Text="Week 2" Value="2" />
                 </asp:DropDownList>
 
                 <!-- ASP GirdView to List All the Teams Stats -->
                 <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                      ID="TeamsGridView" AutoGenerateColumns="false" DataKeyNames="TeamID"
-                     AllowPaging="true" PageSize="5" OnPageIndexChanging="TeamsGridView_PageIndexChanging"
                      AllowSorting="true" OnSorting="TeamsGridView_Sorting" OnRowDataBound="TeamsGridView_RowDataBound">
                     <Columns>
-                        <asp:BoundField DataField="TeamID" HeaderText="Team ID" Visible="true" SortExpression="TeamID" />
-                        <asp:BoundField DataField="TeamName" HeaderText="Department Name" Visible="true" SortExpression="TeamName" />
+                        <asp:BoundField DataField="TeamID" HeaderText="Team ID" Visible="false" SortExpression="TeamID" />
+                        <asp:BoundField DataField="TeamName" HeaderText="Team Name" Visible="true" SortExpression="TeamName" />
                         <asp:BoundField DataField="TeamDescription" HeaderText="Description" Visible="true" SortExpression="TeamDescription" />
+                        <asp:BoundField DataField="PointsScored" HeaderText="Points Scored" Visible="true" SortExpression="PointsScored" />
+                        <asp:BoundField DataField="PointsLost" HeaderText="Points Lost" Visible="true" SortExpression="PointsLost" />
                     </Columns>
                 </asp:GridView>
 
