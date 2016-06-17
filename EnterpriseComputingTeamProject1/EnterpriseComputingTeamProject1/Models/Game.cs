@@ -23,6 +23,8 @@ namespace EnterpriseComputingTeamProject1.Models
         public int Team1Score { get; set; }
         public int Team2Score { get; set; }
         public int NumberOfSpectators { get; set; }
+        public Nullable<int> TotalScore { get; set; }
+        public Nullable<int> WinningID { get; set; }
     
         public virtual Team Team { get; set; }
         public virtual Team Team1 { get; set; }

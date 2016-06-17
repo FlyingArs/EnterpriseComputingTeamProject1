@@ -21,7 +21,7 @@ namespace EnterpriseComputingTeamProject1
             {
 
                 //get the game data
-                this.GetGames();
+                this.GetGames(week);
             }
         }
 
@@ -33,8 +33,12 @@ namespace EnterpriseComputingTeamProject1
  * @method GetStudents
  * @returns {void}
  */
-        protected void GetGames()
+        int week = 1;
+
+        protected void GetGames(int week)
         {
+            
+
             //connect to EF
             using (DefaultConnection db = new DefaultConnection())
             {
@@ -42,21 +46,42 @@ namespace EnterpriseComputingTeamProject1
                 //query the Students Table using EF and LINQ
 
                 var Games = (from allGames in db.Games
-                             join allTeams in db.Teams on allGames.Team1ID equals allTeams.TeamID
-                             where allGames.Week == 1
-                             select new {
+                             join allTeams in db.Teams on allGames.WinningID equals allTeams.TeamID
+                             where allGames.Week == week
+                             select new
+                             {
                                  allGames.Week,
                                  allGames.GameName,
                                  allGames.GameDescription,
                                  allGames.NumberOfSpectators,
                                  TotalScore = allGames.Team1Score + allGames.Team2Score,
-                                 Winner = ((allGames.Team1Score - allGames.Team2Score > 0) ? allGames.Team1ID : allGames.Team2ID)});
+                                 //Winner = ((allGames.Team1Score - allGames.Team2Score > 0) ? allGames.Team1ID : allGames.Team2ID)}
+                                 Winner = allTeams.TeamName
+                             });
+
+               // var teamOne = (from Teams in db.Teams where Team.ID = Games.Team1ID select Team);
+               // var teamTwo = (from Teams in db.Teams where Team.ID = Games.Team2ID select Team);
+
+
+
+
 
                 //bind the result to the GridView
                 GamesGridView.DataSource = Games.ToList();
                 //StudentsGridView.DataSource = Students.ToList();
                 GamesGridView.DataBind();
             }
+        }
+
+        protected void WeekDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Store dropdown list into a variable
+             int week = Convert.ToInt32(WeekDropDownList.SelectedValue);
+
+
+
+            //refresh the grid
+            this.GetGames(week);
         }
     }
     }

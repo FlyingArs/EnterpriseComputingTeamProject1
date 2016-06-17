@@ -44,6 +44,8 @@
           <Property Name="Team1Score" Type="int" Nullable="false" />
           <Property Name="Team2Score" Type="int" Nullable="false" />
           <Property Name="NumberOfSpectators" Type="int" Nullable="false" />
+          <Property Name="TotalScore" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="WinningID" Type="int" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Students">
           <Key>
@@ -199,6 +201,8 @@
           <Property Name="Team1Score" Type="Int32" Nullable="false" />
           <Property Name="Team2Score" Type="Int32" Nullable="false" />
           <Property Name="NumberOfSpectators" Type="Int32" Nullable="false" />
+          <Property Name="TotalScore" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="WinningID" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Team" Relationship="Self.FK_Games_Team1ID" FromRole="Games" ToRole="Teams" />
           <NavigationProperty Name="Team1" Relationship="Self.FK_Games_Team2ID" FromRole="Games" ToRole="Teams" />
         </EntityType>
@@ -357,6 +361,8 @@
                 <ScalarProperty Name="Team1Score" ColumnName="Team1Score" />
                 <ScalarProperty Name="Team2Score" ColumnName="Team2Score" />
                 <ScalarProperty Name="NumberOfSpectators" ColumnName="NumberOfSpectators" />
+                <ScalarProperty Name="TotalScore" ColumnName="TotalScore" />
+                <ScalarProperty Name="WinningID" ColumnName="WinningID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

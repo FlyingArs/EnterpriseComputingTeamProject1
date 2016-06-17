@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b5d587c12f8143d8a10b2e9979c42ea9" Name="Diagram1">
+      <Diagram DiagramId="295533200f4248eca9dd2dc5ade8781a" Name="Diagram1">
         <EntityTypeShape EntityType="GamesModel.Cours" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GamesModel.Department" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GamesModel.Enrollment" Width="1.5" PointX="10.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="GamesModel.Game" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="GamesModel.Student" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="GamesModel.Team" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GamesModel.Team" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="GamesModel.FK_Courses_DepartmentID" ManuallyRouted="false" />
         <AssociationConnector Association="GamesModel.FK_Enrollments_CourseID" ManuallyRouted="false" />
         <AssociationConnector Association="GamesModel.FK_Enrollments_StudentID" ManuallyRouted="false" />

@@ -149,6 +149,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\GamesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GamesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GamesModel.edmx.diagram">
+      <DependentUpon>GamesModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -158,13 +165,6 @@
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Site.Master" />
-    <EntityDeploy Include="Models\GamesModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GamesModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\GamesModel.edmx.diagram">
-      <DependentUpon>GamesModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Web.Debug.config">
