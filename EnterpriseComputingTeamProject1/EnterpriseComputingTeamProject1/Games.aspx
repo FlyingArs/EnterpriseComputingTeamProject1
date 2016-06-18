@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Games" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Games.aspx.cs" Inherits="EnterpriseComputingTeamProject1.GamesPublic" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-                    <div>
+                 <div>
                     <label for="PageSizeDropDownList">Week: </label>
                     <asp:DropDownList ID="WeekDropDownList" runat="server"
                         AutoPostBack="true" CssClass="btn btn-default bt-sm dropdown-toggle"
