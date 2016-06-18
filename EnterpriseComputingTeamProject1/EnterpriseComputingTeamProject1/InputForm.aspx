@@ -7,19 +7,92 @@
     
     --%>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InputForm.aspx.cs" Inherits="EnterpriseComputingTeamProject1.InputForm" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InputForm.aspx.cs" Inherits="EnterpriseComputingTeamProject1.InputForm" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1>Games Details</h1>
+                <h5>All Fields are Required</h5>
+                <br />
+                <div>
+                    <label for="WeekDropDownList">Week: </label>
+                    <asp:DropDownList ID="WeekDropDownList" runat="server"
+                        AutoPostBack="true" CssClass="btn btn-default bt-sm dropdown-toggle"
+                        OnSelectedIndexChanged="WeekDropDownList_SelectedIndexChanged">
+                        <asp:ListItem>-- pick a team --</asp:ListItem>
+                        <asp:ListItem Text="1" Value="1" />
+                        <asp:ListItem Text="2" Value="2" />
+                        <asp:ListItem Text="3" Value="3" />
+                        <asp:ListItem Text="4" Value="4" />
+                    </asp:DropDownList>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="LastNameTextBox">Game Name</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="GameNameTextBox" placeholder="Game Name" required="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="GameDescriptionTextBox">Short Description</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="GameDescriptionTextBox" placeholder="Game Description" required="true"></asp:TextBox>
+                </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+                 <div class="form-group">
+                    <label for="Team1DropDownList">Team 1 Name: </label>
+                    <asp:DropDownList ID="Team1DropDownList" runat="server"
+                        AutoPostBack="true" CssClass="btn btn-default bt-sm dropdown-toggle"
+                        OnSelectedIndexChanged="Team1DropDownList_SelectedIndexChanged">
+                        <asp:ListItem>-- pick a team --</asp:ListItem>
+                        <asp:ListItem Text="Baltimore Orioles" Value="100000" />
+                        <asp:ListItem Text="Boston Red Sox" Value="100001" />
+                        <asp:ListItem Text="Chicago White Sox" Value="100002" />
+                        <asp:ListItem Text="Cleveland Indians" Value="100003" />
+                        <asp:ListItem Text="Detroit Tigers" Value="100004" />
+                        <asp:ListItem Text="Houston Astros" Value="100005" />
+                        <asp:ListItem Text="Kansas City Royals" Value="100006" />
+                        <asp:ListItem Text="Los Angeles Angels" Value="100007" />
+                    </asp:DropDownList>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label" for="Team1ScoreTextBox">Team 1 Score</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="Team1ScoreTextBox" placeholder="Team 1 Score" required="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label for="Team2DropDownList" >Team 2 Name: </label>
+                    <asp:DropDownList ID="Team2DropDownList" runat="server"
+                        AutoPostBack="true" CssClass="btn btn-default bt-sm dropdown-toggle"
+                        OnSelectedIndexChanged="Team2DropDownList_SelectedIndexChanged">
+                        <asp:ListItem>-- pick a team --</asp:ListItem>
+                        <asp:ListItem Selected="False" Text="Baltimore Orioles" Value="100000" />
+                        <asp:ListItem Text="Boston Red Sox" Value="100001" />
+                        <asp:ListItem Text="Chicago White Sox" Value="100002" />
+                        <asp:ListItem Text="Cleveland Indians" Value="100003" />
+                        <asp:ListItem Text="Detroit Tigers" Value="100004" />
+                        <asp:ListItem Text="Houston Astros" Value="100005" />
+                        <asp:ListItem Text="Kansas City Royals" Value="100006" />
+                        <asp:ListItem Text="Los Angeles Angels" Value="100007" />
+                    </asp:DropDownList>
+                </div>
+                <asp:CompareValidator id="compareTeamNames" ErrorMessage="A team cannot play against itself" ControlToValidate="Team1DropDownList" ControlToCompare="Team2DropDownList" Operator="NotEqual" Type="Integer" runat="server" BackColor="Yellow" Display="Dynamic" />
+                <%--<asp:Label ID="SameTeamWarning" Text="" runat="server"  style="color: #FF0000" />--%>
+                <%--<asp:CustomValidator ID="TeamNameValidator" runat="server" OnServerValidate="TeamNameValidator_ServerValidate" ErrorMessage="A team cannot play against itself"></asp:CustomValidator>--%>
+                <div class="form-group">
+                    <label class="control-label" for="Team2ScoreTextBox" >Team 2 Score</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="Team2ScoreTextBox" placeholder="Team 2 Score" required="true"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="NumberOfSpectatorsTextBox">Name Of Spectators</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="NumberOfSpectatorsTextBox" placeholder="Number Of Spectators" required="true"></asp:TextBox>
+                </div>
+
+                <div class="text-right">
+
+                    <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server"
+                        UseSubmitBehavior="false" CausesValidation="false" Onclick="CancelButton_Click" />
+                    <asp:Button Text="Save" ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="SaveButton_Click" />
+                </div>
+            </div>
+        </div>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
