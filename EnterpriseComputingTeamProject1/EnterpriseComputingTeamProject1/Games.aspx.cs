@@ -40,7 +40,7 @@ namespace EnterpriseComputingTeamProject1
             
 
             //connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (GTConnection db = new GTConnection())
             {
 
                 //query the Students Table using EF and LINQ

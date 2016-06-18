@@ -42,7 +42,7 @@ namespace EnterpriseComputingTeamProject1
             int selectedWeek = Convert.ToInt32(Session["SelectedWeek"].ToString());
 
             // connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (GTConnection db = new GTConnection())
             {
                 //query the teams from table using EF and LINQ
                 var teams1 = (from allTeams in db.Teams
@@ -65,6 +65,7 @@ namespace EnterpriseComputingTeamProject1
                                   PointsScored = allGames.Team2Score,
                                   PointsLost = allGames.Team1Score
                               });
+                //combine queries results
                 var teams = teams1.Concat(teams2);
                 //bind the results to GridView
                 TeamsGridView.DataSource = teams.AsQueryable().OrderBy(sortString).ToList();

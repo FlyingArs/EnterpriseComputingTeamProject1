@@ -5,10 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+// required for identity for owin
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+
 /**
  * @author: David Yu
- * @date: June 16, 2016
- * @version: 0.0.2 - modified page links
+ * @date: June 17, 2016
+ * @version: 0.0.3 - modified page links for OWIN
  */
 
 namespace EnterpriseComputingTeamProject1
@@ -17,7 +22,24 @@ namespace EnterpriseComputingTeamProject1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetActivePage();
+            if (!IsPostBack)
+            {
+                // check if a user is logged in
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    // show the secured content area
+                    SecurePlaceHolder.Visible = true;
+                    PublicPlaceHolder.Visible = false;
+                }
+                else
+                {
+                    // show the public content area
+                    SecurePlaceHolder.Visible = false;
+                    PublicPlaceHolder.Visible = true;
+                }
+                SetActivePage();
+            }
+           
         }
 
         /**
