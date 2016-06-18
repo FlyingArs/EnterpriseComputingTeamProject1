@@ -22,6 +22,7 @@ namespace EnterpriseComputingTeamProject1
             {
                 Session["SortColumn"] = "TeamID";
                 Session["SortDirection"] = "ASC";
+                Session["SelectedWeek"] = "1";
                 //get the student data
                 this.GetTeams();
             }
@@ -38,19 +39,40 @@ namespace EnterpriseComputingTeamProject1
         protected void GetTeams()
         {
             string sortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
+            int selectedWeek = Convert.ToInt32(Session["SelectedWeek"].ToString());
 
             // connect to EF
             using (DefaultConnection db = new DefaultConnection())
             {
                 //query the teams from table using EF and LINQ
-                var teams = (from allTeams in db.Teams
-                             select allTeams);
+                var teams1 = (from allTeams in db.Teams
+                              join allGames in db.Games on allTeams.TeamID equals allGames.Team1ID
+                              where allGames.Week == selectedWeek
+                              select new { TeamID = allTeams.TeamID,
+                                           TeamName = allTeams.TeamName,
+                                           TeamDescription = allTeams.TeamDescription,
+                                           PointsScored = allGames.Team1Score,
+                                           PointsLost = allGames.Team2Score
+                              });
+                var teams2 = (from allTeams in db.Teams
+                              join allGames in db.Games on allTeams.TeamID equals allGames.Team2ID
+                              where allGames.Week == selectedWeek
+                              select new
+                              {
+                                  TeamID = allTeams.TeamID,
+                                  TeamName = allTeams.TeamName,
+                                  TeamDescription = allTeams.TeamDescription,
+                                  PointsScored = allGames.Team2Score,
+                                  PointsLost = allGames.Team1Score
+                              });
+                var teams = teams1.Concat(teams2);
                 //bind the results to GridView
                 TeamsGridView.DataSource = teams.AsQueryable().OrderBy(sortString).ToList();
                 TeamsGridView.DataBind();
             }
         }
 
+        /*
         protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             // set the new page size
@@ -59,6 +81,7 @@ namespace EnterpriseComputingTeamProject1
             //refresh the grid
             this.GetTeams();
         }
+        
 
         protected void TeamsGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -68,6 +91,7 @@ namespace EnterpriseComputingTeamProject1
             // refresh the grid
             this.GetTeams();
         }
+        */
 
         protected void TeamsGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
@@ -108,6 +132,15 @@ namespace EnterpriseComputingTeamProject1
                     }
                 }
             }
+        }
+
+        protected void WeekDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //set the new selected week
+            Session["SelectedWeek"] = WeekDropDownList.SelectedValue;
+
+            //refresh the page
+            this.GetTeams();
         }
     }
 }

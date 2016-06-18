@@ -25,9 +25,9 @@
                 </div>
                 <div class="text-right">
                     <!--<asp:Button runat="server" CssClass="btn btn-warning btn-lg" ID="CancelButton" Text="Cancel" OnClick="CancelButton_Click" />-->
-                    <!--<a class="btn btn-warning btn-lg" id="CancelButton" href="Default.aspx">Cancel</a>-->
-                    <asp:Button runat="server" CssClass="btn btn-primary btn-lg" ID="SubmitButton" Text="Submit" OnClick="SubmitButton_Click" CausesValidation="true" />
+                    <!--<a class="btn btn-warning btn-lg" id="CancelButton" href="Default.aspx">Cancel</a>-->                    
                     <asp:Button runat="server" CssClass="btn btn-primary btn-lg" ID="RegisterButton" Text="Register" OnClick="RegisterButton_Click" CausesValidation="true" />
+                    <asp:Button runat="server" CssClass="btn btn-success btn-lg" ID="SubmitButton" Text="Login" OnClick="SubmitButton_Click" CausesValidation="true" />
                 </div>
             </div>
         </div>
