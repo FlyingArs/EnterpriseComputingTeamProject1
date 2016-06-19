@@ -132,6 +132,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Games.aspx" />
     <Content Include="InputForm.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Models\GamesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GamesModel.edmx</DependentUpon>
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Cours.cs">
       <DependentUpon>GamesModel.tt</DependentUpon>

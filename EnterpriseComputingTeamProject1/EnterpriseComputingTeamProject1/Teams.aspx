@@ -21,6 +21,8 @@
                     CssClass="btn btn-default btn-sm dropdown-toggle" OnSelectedIndexChanged="WeekDropDownList_SelectedIndexChanged">
                     <asp:ListItem Text="Week 1" Value="1" />
                     <asp:ListItem Text="Week 2" Value="2" />
+                    <asp:ListItem Text="Week 3" Value="3" />
+                    <asp:ListItem Text="Week 4" Value="4" />
                 </asp:DropDownList>
 
                 <!-- ASP GirdView to List All the Teams Stats -->
