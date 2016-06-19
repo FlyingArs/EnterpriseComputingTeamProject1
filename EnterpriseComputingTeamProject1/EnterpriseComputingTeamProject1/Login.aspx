@@ -15,7 +15,7 @@
                 <div class="alert alert-danger" id="AlertFlash" runat="server" visible="false">
                     <asp:Label runat="server" ID="StatusLabel" />
                 </div>
-                <h1>Login Page</h1>
+                <h1>Log In Here</h1>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h1 class="panel-title"><i class="fa fa-sign-in fa-lg"></i> Login</h1>

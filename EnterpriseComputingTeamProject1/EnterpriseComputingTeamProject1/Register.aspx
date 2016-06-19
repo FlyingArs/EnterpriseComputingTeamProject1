@@ -15,7 +15,7 @@
                  <div class="alert alert-danger" id="AlertFlash" runat="server" visible="false">
                     <asp:Label runat="server" ID="StatusLabel" />
                 </div>
-                <h1>Register</h1>
+                <h1>Register Now</h1>
                 <h5>All Fields are Required</h5>
                 <br />
                 <div class="panel panel-primary">

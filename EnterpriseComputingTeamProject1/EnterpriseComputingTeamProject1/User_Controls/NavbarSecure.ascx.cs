@@ -26,7 +26,7 @@ namespace EnterpriseComputingTeamProject1
             {
                 // check if a user is logged in
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
-                {
+                {                   
                     // show the secured content area
                     SecurePlaceHolder.Visible = true;
                     PublicPlaceHolder.Visible = false;

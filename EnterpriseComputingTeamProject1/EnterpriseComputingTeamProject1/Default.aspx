@@ -17,9 +17,12 @@
             <br />
             <br />
             <div class="text-center">
-                <a href="Games.aspx" class="btn btn-primary btn-lg">Games Stats</a>
-                <a href="Teams.aspx" class="btn btn-primary btn-lg">Teams Stats</a>
+                <a href="Games.aspx" class="btn btn-primary btn-lg"><i class="fa fa-trophy fa-lg"></i> Game List</a>               
             </div>
+            <br />
+            <div class="text-center">
+                <a href="Teams.aspx" class="btn btn-primary btn-lg"><i class="fa fa-futbol-o fa-lg"></i> Team List</a>               
+            </div>           
         </BodyContent>
     </bs3:Jumbotron>
 </asp:Content>

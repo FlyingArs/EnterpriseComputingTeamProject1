@@ -1,4 +1,31 @@
-﻿/* Sticky footer styles
+﻿/* Navbar section*/
+.navbar-inverse{
+    background-image: linear-gradient(to bottom,#B73333 0,#222 100%);
+}
+
+/* General section*/
+h1{
+    color: #CE9C27;
+}
+a{
+    color: #B73333;
+}
+
+.panel-primary > .panel-heading{
+    background-image: linear-gradient(to bottom,#B73333 0,#222 100%);   
+}
+
+.jumbotron{
+    background-image: url("../Assets/logo50.png");
+    background-position: left bottom;
+    background-repeat:no-repeat;
+}
+
+.jumbotron .h1, .jumbotron h1{
+    color: #CE9C27;
+}
+
+/* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
@@ -14,6 +41,14 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+}
+
+.bg-info{
+    background-color: #B73333;
+}
+
+.text-muted{
+    color: white;
 }
 
 
