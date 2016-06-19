@@ -3,7 +3,7 @@
     Fei Wang 200278460
     Siqian Yu 200286902
    Date Modified: 06-15-2016
-   File Description: This is the Teams Statistics Page that lists Teams' names, description and socores
+   File Description: This is the Teams Statistics Page that lists Teams' names, description and scores
     
     --%>
 
@@ -16,7 +16,7 @@
                 <h1>Teams Stats</h1>
 
                 <!-- Drop Down List for Week Selection-->
-                <label for="PageSizeDropDownList">Select Week: </label>
+                <label for="WeekDropDownList">Select Week: </label>
                 <asp:DropDownList ID="WeekDropDownList" runat="server" AutoPostBack="true"
                     CssClass="btn btn-default btn-sm dropdown-toggle" OnSelectedIndexChanged="WeekDropDownList_SelectedIndexChanged">
                     <asp:ListItem Text="Week 1" Value="1" />

@@ -10,10 +10,9 @@ using EnterpriseComputingTeamProject1.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 
-
 namespace EnterpriseComputingTeamProject1
 {
-    public partial class GamesPublic : System.Web.UI.Page
+    public partial class GamesPublic1 : System.Web.UI.Page
     {
         int week = 1;
 
@@ -69,7 +68,7 @@ namespace EnterpriseComputingTeamProject1
         protected void WeekDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Store dropdown list into a variable
-             int week = Convert.ToInt32(WeekDropDownList.SelectedValue);
+            int week = Convert.ToInt32(WeekDropDownList.SelectedValue);
 
             //refresh the grid
             this.GetGames(week);
@@ -113,43 +112,6 @@ namespace EnterpriseComputingTeamProject1
                         }
                     }
                 }
-            }
-        }
-
-        /**
-         * <summary>
-         * This event handler deletes a game from the db using EF
-         * </summary>
-         * 
-         * @method GamesGridView_RowDeleting
-         * @param {object} sender
-         * @param {GridViewDeleteEventArgs} e
-         * @returns {void}
-         */
-        protected void GamesGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            // store which row was clicked
-            int selectedRow = e.RowIndex;
-
-            // get the selected GameID using the Grid's DataKey collection
-            int GameID = Convert.ToInt32(GamesGridView.DataKeys[selectedRow].Values["GameID"]);
-
-            // use EF to find the selected game in the DB and remove it
-            using (GTConnection db = new GTConnection())
-            {
-                // create object of the Student class and store the query string inside of it
-                Game deletedGame = (from gameRecords in db.Games
-                                       where gameRecords.GameID == GameID
-                                       select gameRecords).FirstOrDefault();
-
-                // remove the selected game from the db
-                db.Games.Remove(deletedGame);
-
-                // save my changes back to the database
-                db.SaveChanges();
-
-                // refresh the grid
-                this.GetGames(week);
             }
         }
     }

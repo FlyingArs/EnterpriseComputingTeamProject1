@@ -49,22 +49,13 @@ namespace EnterpriseComputingTeamProject1 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl register;
         
         /// <summary>
-        /// games control.
+        /// gamespublic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl games;
-        
-        /// <summary>
-        /// teams control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teams;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gamespublic;
         
         /// <summary>
         /// SecurePlaceHolder control.
@@ -83,5 +74,23 @@ namespace EnterpriseComputingTeamProject1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout;
+        
+        /// <summary>
+        /// games control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl games;
+        
+        /// <summary>
+        /// teams control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl teams;
     }
 }

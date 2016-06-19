@@ -16,9 +16,16 @@
             <br />
             <br />
             <br />
-            <div class="text-center">
-                <a href="Games.aspx" class="btn btn-primary btn-lg"><i class="fa fa-trophy fa-lg"></i> Game List</a>               
-            </div>
+            <asp:PlaceHolder runat="server" ID="PublicMenuPlaceHolder">
+                <div class="text-center">
+                    <a href="GamesPublic.aspx" class="btn btn-primary btn-lg"><i class="fa fa-trophy fa-lg"></i> Game List</a>               
+                </div>
+            </asp:PlaceHolder>
+            <asp:PlaceHolder runat="server" ID="SecureMenuPlaceHolder">
+                <div class="text-center">
+                    <a href="Games.aspx" class="btn btn-primary btn-lg"><i class="fa fa-trophy fa-lg"></i> Game List</a>               
+                </div>
+            </asp:PlaceHolder>           
             <br />
             <div class="text-center">
                 <a href="Teams.aspx" class="btn btn-primary btn-lg"><i class="fa fa-futbol-o fa-lg"></i> Team List</a>               

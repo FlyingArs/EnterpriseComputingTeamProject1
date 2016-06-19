@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 
 /**
- * @author: David Yu
+ * @author: David Yu & Fei Wang
  * @date: June 17, 2016
  * @version: 0.0.3 - modified page links for OWIN
  */
@@ -64,6 +64,9 @@ namespace EnterpriseComputingTeamProject1
                     break;
                 case "Games":
                     games.Attributes.Add("class", "active");
+                    break;
+                case "GamesPublic":
+                    gamespublic.Attributes.Add("class", "active");
                     break;
                 case "Teams":
                     teams.Attributes.Add("class", "active");

@@ -36,7 +36,7 @@ namespace EnterpriseComputingTeamProject1
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             //Use EF to connect to  the server
-            using (DefaultConnection db = new DefaultConnection())
+            using (GTConnection db = new GTConnection())
             {
                 //if two team IDs are not equal then insert the data into game table, otherwise pop up a message
                 //if (team1ID != team2ID)

@@ -132,6 +132,7 @@
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Games.aspx" />
+    <Content Include="GamesPublic.aspx" />
     <Content Include="InputForm.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Models\GamesModel.Context.tt">
@@ -209,6 +210,13 @@
     </Compile>
     <Compile Include="Games.aspx.designer.cs">
       <DependentUpon>Games.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GamesPublic.aspx.cs">
+      <DependentUpon>GamesPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GamesPublic.aspx.designer.cs">
+      <DependentUpon>GamesPublic.aspx</DependentUpon>
     </Compile>
     <Compile Include="InputForm.aspx.cs">
       <DependentUpon>InputForm.aspx</DependentUpon>

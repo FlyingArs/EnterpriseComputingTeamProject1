@@ -28,12 +28,13 @@
                 <asp:PlaceHolder runat="server" ID="PublicPlaceHolder">
                     <li id="login" runat="server"><a href="/Login.aspx"><i class="fa fa-sign-in fa-lg"></i> Login</a></li>
                     <li id="register" runat="server"><a href="/Register.aspx"><i class="fa fa-user-plus fa-lg"></i> Register</a></li>
-                </asp:PlaceHolder>                               
-                <li id="games" runat="server"><a href="Games.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
-                <li id="teams" runat="server"><a href="Teams.aspx"><i class="fa fa-futbol-o fa-lg"></i> Teams</a></li>
+                    <li id="gamespublic" runat="server"><a href="GamesPublic.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
+                </asp:PlaceHolder>  
                 <asp:PlaceHolder runat="server" ID="SecurePlaceHolder">
                     <li id="logout" runat="server"><a href="Logout.aspx"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-                </asp:PlaceHolder>               
+                    <li id="games" runat="server"><a href="Games.aspx"><i class="fa fa-trophy fa-lg"></i> Games</a></li>
+                </asp:PlaceHolder>                                             
+                <li id="teams" runat="server"><a href="Teams.aspx"><i class="fa fa-futbol-o fa-lg"></i> Teams</a></li>                               
             </ul>
         </div>
         <!-- /.navbar-collapse -->
