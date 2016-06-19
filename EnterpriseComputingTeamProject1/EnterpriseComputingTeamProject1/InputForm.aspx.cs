@@ -39,32 +39,35 @@ namespace EnterpriseComputingTeamProject1
             using (DefaultConnection db = new DefaultConnection())
             {
                 //if two team IDs are not equal then insert the data into game table, otherwise pop up a message
-                if (team1ID != team2ID)
-                {
+                //if (team1ID != team2ID)
+                //{
                     //save the information to the database
                     //use the Student model to create a new student object and
                     //save a new record
-                    Game newgame = new Game();
+                    Game game = new Game();
 
-                    newgame.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
-                    newgame.GameName = GameNameTextBox.Text;
-                    newgame.GameDescription = GameDescriptionTextBox.Text;
-                    newgame.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
-                    newgame.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
-                    newgame.Team1Score = Convert.ToInt32(Team1ScoreTextBox);
-                    newgame.Team2Score = Convert.ToInt32(Team2ScoreTextBox);
-                    newgame.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox);
+                    game.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
+                    game.GameName = GameNameTextBox.Text;
+                    game.GameDescription = GameDescriptionTextBox.Text;
+                    game.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
+                    game.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
+                    game.Team1Score = Convert.ToInt32(Team1ScoreTextBox.Text);
+                    game.Team2Score = Convert.ToInt32(Team2ScoreTextBox.Text);
+                    game.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox.Text);
 
+                    //add the game object to 
+                    db.Games.Add(game);
+                    
                     //save changes
                     db.SaveChanges();
 
                     //Redirect back to the updated students page
                     Response.Redirect("~/Games.aspx");
-                }
-                else
-                {
-                    Response.Write("<script>alert('A team cannot play against itself')</script>");
-                }
+                //}
+                //else
+                //{
+                    //Response.Write("<script>alert('A team cannot play against itself')</script>");
+                //}
 
 
                 //Redirect back to the updated students page
