@@ -58,6 +58,15 @@ namespace EnterpriseComputingTeamProject1 {
         protected global::System.Web.UI.WebControls.TextBox Team1ScoreTextBox;
         
         /// <summary>
+        /// Team1ScoreRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Team1ScoreRangeValidator;
+        
+        /// <summary>
         /// Team2DropDownList control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace EnterpriseComputingTeamProject1 {
         protected global::System.Web.UI.WebControls.TextBox Team2ScoreTextBox;
         
         /// <summary>
+        /// Team2ScoreRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator Team2ScoreRangeValidator;
+        
+        /// <summary>
         /// NumberOfSpectatorsTextBox control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace EnterpriseComputingTeamProject1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NumberOfSpectatorsTextBox;
+        
+        /// <summary>
+        /// NumberOfSpectatorsRangeValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator NumberOfSpectatorsRangeValidator;
         
         /// <summary>
         /// CancelButton control.
