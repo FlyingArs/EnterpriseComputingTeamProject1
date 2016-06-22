@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** Authors & Student Number:
+    Fei Wang 200278460
+    Siqian Yu 200286902
+    Date Modified: 06-19-2016
+    File Description: This is the backend file to display game statistics. 
+    **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

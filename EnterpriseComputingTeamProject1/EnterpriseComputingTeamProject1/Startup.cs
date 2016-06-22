@@ -1,4 +1,12 @@
-﻿using System;
+﻿/** Authors & Student Number:
+    Fei Wang 200278460
+    Siqian Yu 200286902
+    Date Modified: 06-19-2016
+    File Description: This is the security profile to make sure that only users who logged in can access the pages.
+    **/
+
+
+using System;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
