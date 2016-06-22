@@ -16,13 +16,14 @@ using System.Web.UI.WebControls;
 using EnterpriseComputingTeamProject1.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
-
+using System.Globalization;
 
 namespace EnterpriseComputingTeamProject1
 {
     public partial class GamesPublic : System.Web.UI.Page
     {
-        int week = 1;
+        // set the first week of gmaes started from the 24th week of the year
+        int week = GetIso8601WeekOfYear(DateTime.Now) - 23;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,6 +33,7 @@ namespace EnterpriseComputingTeamProject1
                 Session["SortColumn"] = "GameID";
                 Session["SortDirection"] = "ASC";
                 //get the game data
+                WeekDropDownList.SelectedValue = week.ToString();
                 this.GetGames(week);
             }
         }
@@ -71,6 +73,26 @@ namespace EnterpriseComputingTeamProject1
                 GamesGridView.DataSource = Games.AsQueryable().OrderBy(sortString).ToList();
                 GamesGridView.DataBind();
             }
+        }
+
+        /**
+         * <summary>
+         * This static method returns the current week number of the year
+         * </summary>
+         * 
+         * @return {int}
+         * @param {DateTime}time
+         */
+        protected static int GetIso8601WeekOfYear(DateTime time)
+        {
+            DayOfWeek day = CultureInfo.InvariantCulture.Calendar.GetDayOfWeek(time);
+            if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
+            {
+                time = time.AddDays(3);
+            }
+
+            // Return the week of our adjusted day
+            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
         }
 
         protected void WeekDropDownList_SelectedIndexChanged(object sender, EventArgs e)

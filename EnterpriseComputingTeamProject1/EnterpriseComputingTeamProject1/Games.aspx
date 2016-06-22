@@ -15,7 +15,7 @@
             <div class="col-md-offest-2 col-md-8">
                 <h1>Games Stats</h1>
                 <a href="InputForm.aspx" class="text-right btn btn-success btn-sm"><i class="fa fa-plus"></i>Add Game</a>
-
+                <asp:Label runat="server" ID="testlabel"></asp:Label>
                 <!-- Drop Down List for Week Selection-->
                 <div>
                     <label for="WeekDropDownList">Select Week: </label>

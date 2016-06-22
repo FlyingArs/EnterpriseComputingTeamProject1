@@ -1,7 +1,7 @@
 ﻿/** Authors & Student Number:
     Fei Wang 200278460
     Siqian Yu 200286902
-    Date Modified: 06-19-2016
+    Date Modified: 06-22-2016
     File Description: This is the backend file for InputForm that handles all the inputting info into the database.
     **/
 
@@ -22,9 +22,6 @@ namespace EnterpriseComputingTeamProject1
 {
     public partial class InputForm : System.Web.UI.Page
     {
-        int team1ID;
-        int team2ID;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             // if this is to update the game data, show the existing game info
@@ -81,83 +78,59 @@ namespace EnterpriseComputingTeamProject1
             Response.Redirect("~/Games.aspx");
         }
 
+        /**
+         * <summary>
+         * This method gets the input from GridView and save/updated the Game object
+         * into the DB
+         * </summary>
+         * 
+         * @return {void}
+         * @param {object}sender
+         * @param {EventArgs}e
+         */
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            //if two team IDs are not equal then insert the data into game table, otherwise pop up a message
-            if (team1ID != team2ID)
+            //Use EF to connect to  the server
+            using (GTConnection db = new GTConnection())
             {
-                //Use EF to connect to  the server
-                using (GTConnection db = new GTConnection())
+                //save the information to the database
+                //use the Game model to create a new game object and
+                //save a new record
+                Game newGame = new Game();
+
+                int GameID = 0;
+                if (Request.QueryString.Count > 0) // our URL has a GameID in it
                 {
-                    //save the information to the database
-                    //use the Game model to create a new game object and
-                    //save a new record
-                    Game newGame = new Game();
+                    // get the id from the URL
+                    GameID = Convert.ToInt32(Request.QueryString["GameID"]);
 
-                    int GameID = 0;
-                    if (Request.QueryString.Count > 0) // our URL has a GameID in it
-                    {
-                        // get the id from the URL
-                        GameID = Convert.ToInt32(Request.QueryString["GameID"]);
-
-                        // get the current student from EF DB
-                        newGame = (from game in db.Games
-                                   where game.GameID == GameID
-                                   select game).FirstOrDefault();
-                    }
-
-
-
-                    newGame.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
-                    newGame.GameName = GameNameTextBox.Text;
-                    newGame.GameDescription = GameDescriptionTextBox.Text;
-                    newGame.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
-                    newGame.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
-                    newGame.Team1Score = Convert.ToInt32(Team1ScoreTextBox.Text);
-                    newGame.Team2Score = Convert.ToInt32(Team2ScoreTextBox.Text);
-                    newGame.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox.Text);
-
-                    //add the game object to 
-                    if (GameID == 0)
-                    {
-                        db.Games.Add(newGame);
-                    }
-
-                    //save changes
-                    db.SaveChanges();
-
-                    //Redirect back to the updated students page
-                    Response.Redirect("~/Games.aspx");
+                    // get the current student from EF DB
+                    newGame = (from game in db.Games
+                                where game.GameID == GameID
+                                select game).FirstOrDefault();
                 }
 
-            
-                //}
-                //else
-                //{
-                    //Response.Write("<script>alert('A team cannot play against itself')</script>");
-                //}
+                newGame.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
+                newGame.GameName = GameNameTextBox.Text;
+                newGame.GameDescription = GameDescriptionTextBox.Text;
+                newGame.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
+                newGame.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
+                newGame.Team1Score = Convert.ToInt32(Team1ScoreTextBox.Text);
+                newGame.Team2Score = Convert.ToInt32(Team2ScoreTextBox.Text);
+                newGame.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox.Text);
 
+                //add the game object to 
+                if (GameID == 0)
+                {
+                    db.Games.Add(newGame);
+                }
+
+                //save changes
+                db.SaveChanges();
 
                 //Redirect back to the updated students page
-                //Response.Redirect("~/Games.aspx");
-            }
-            else
-            {
-                
+                Response.Redirect("~/Games.aspx");
             }
         }
-
-        protected void Team1DropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Save the Team Info into a varaible
-
-            team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
-        }
-
-        protected void Team2DropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
-        }
-
     }
 }

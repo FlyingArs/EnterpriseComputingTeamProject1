@@ -17,7 +17,7 @@ using System.Web.UI.WebControls;
 using EnterpriseComputingTeamProject1.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
-
+using System.Globalization;
 
 namespace EnterpriseComputingTeamProject1
 {
@@ -30,8 +30,9 @@ namespace EnterpriseComputingTeamProject1
             {
                 Session["SortColumn"] = "TeamID";
                 Session["SortDirection"] = "ASC";
-                Session["SelectedWeek"] = "1";
+                Session["SelectedWeek"] = GetIso8601WeekOfYear(DateTime.Now) - 23;
                 //get the student data
+                WeekDropDownList.SelectedValue = Session["SelectedWeek"].ToString();
                 this.GetTeams();
             }
         }
@@ -81,26 +82,25 @@ namespace EnterpriseComputingTeamProject1
             }
         }
 
-        /*
-        protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        /**
+         * <summary>
+         * This static method returns the current week number of the year
+         * </summary>
+         * 
+         * @return {int}
+         * @param {DateTime}time
+         */
+        protected static int GetIso8601WeekOfYear(DateTime time)
         {
-            // set the new page size
-            TeamsGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
+            DayOfWeek day = CultureInfo.InvariantCulture.Calendar.GetDayOfWeek(time);
+            if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
+            {
+                time = time.AddDays(3);
+            }
 
-            //refresh the grid
-            this.GetTeams();
+            // Return the week of our adjusted day
+            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
         }
-        
-
-        protected void TeamsGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            // set the new page number
-            TeamsGridView.PageIndex = e.NewPageIndex;
-
-            // refresh the grid
-            this.GetTeams();
-        }
-        */
 
         protected void TeamsGridView_Sorting(object sender, GridViewSortEventArgs e)
         {
