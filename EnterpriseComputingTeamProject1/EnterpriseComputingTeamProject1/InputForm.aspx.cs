@@ -19,7 +19,47 @@ namespace EnterpriseComputingTeamProject1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // if this is to update the game data, show the existing game info
+            if ((!IsPostBack) && (Request.QueryString.Count > 0))
+            {
+                this.GetGame();
+            }
+        }
 
+        /**
+         * <summary>
+         * This method gets the game data from DB and displays in the GridView
+         * </summary>
+         * 
+         * @method GetGame
+         * @return {void}
+         */
+        protected void GetGame()
+        {
+            // populate the form with existing data from the database
+            int GameID = Convert.ToInt32(Request.QueryString["GameID"]);
+
+            // connect to the EF DB
+            using (GTConnection db = new GTConnection())
+            {
+                // populate a game object instance with the GameID from the URL Parameter
+                Game updatedGame = (from game in db.Games
+                                    where game.GameID == GameID
+                                    select game).FirstOrDefault();
+
+                // map the game properties to the form controls
+                if (updatedGame != null)
+                {
+                    WeekDropDownList.SelectedValue = updatedGame.Week.ToString();
+                    GameNameTextBox.Text = updatedGame.GameName;
+                    GameDescriptionTextBox.Text = updatedGame.GameDescription;
+                    Team1DropDownList.SelectedValue = updatedGame.Team1ID.ToString();
+                    Team1ScoreTextBox.Text = updatedGame.Team1Score.ToString();
+                    Team2DropDownList.SelectedValue = updatedGame.Team2ID.ToString();
+                    Team2ScoreTextBox.Text = updatedGame.Team2Score.ToString();
+                    NumberOfSpectatorsTextBox.Text = updatedGame.NumberOfSpectators.ToString();
+                }
+            }
         }
 
         protected void WeekDropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,34 +75,54 @@ namespace EnterpriseComputingTeamProject1
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            //Use EF to connect to  the server
-            using (GTConnection db = new GTConnection())
+            //if two team IDs are not equal then insert the data into game table, otherwise pop up a message
+            if (team1ID != team2ID)
             {
-                //if two team IDs are not equal then insert the data into game table, otherwise pop up a message
-                //if (team1ID != team2ID)
-                //{
+                //Use EF to connect to  the server
+                using (GTConnection db = new GTConnection())
+                {
                     //save the information to the database
-                    //use the Student model to create a new student object and
+                    //use the Game model to create a new game object and
                     //save a new record
-                    Game game = new Game();
+                    Game newGame = new Game();
 
-                    game.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
-                    game.GameName = GameNameTextBox.Text;
-                    game.GameDescription = GameDescriptionTextBox.Text;
-                    game.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
-                    game.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
-                    game.Team1Score = Convert.ToInt32(Team1ScoreTextBox.Text);
-                    game.Team2Score = Convert.ToInt32(Team2ScoreTextBox.Text);
-                    game.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox.Text);
+                    int GameID = 0;
+                    if (Request.QueryString.Count > 0) // our URL has a GameID in it
+                    {
+                        // get the id from the URL
+                        GameID = Convert.ToInt32(Request.QueryString["GameID"]);
+
+                        // get the current student from EF DB
+                        newGame = (from game in db.Games
+                                   where game.GameID == GameID
+                                   select game).FirstOrDefault();
+                    }
+
+
+
+                    newGame.Week = Convert.ToInt32(WeekDropDownList.SelectedValue);
+                    newGame.GameName = GameNameTextBox.Text;
+                    newGame.GameDescription = GameDescriptionTextBox.Text;
+                    newGame.Team1ID = Convert.ToInt32(Team1DropDownList.SelectedValue);
+                    newGame.Team2ID = Convert.ToInt32(Team2DropDownList.SelectedValue);
+                    newGame.Team1Score = Convert.ToInt32(Team1ScoreTextBox.Text);
+                    newGame.Team2Score = Convert.ToInt32(Team2ScoreTextBox.Text);
+                    newGame.NumberOfSpectators = Convert.ToInt32(NumberOfSpectatorsTextBox.Text);
 
                     //add the game object to 
-                    db.Games.Add(game);
-                    
+                    if (GameID == 0)
+                    {
+                        db.Games.Add(newGame);
+                    }
+
                     //save changes
                     db.SaveChanges();
 
                     //Redirect back to the updated students page
                     Response.Redirect("~/Games.aspx");
+                }
+
+            
                 //}
                 //else
                 //{
@@ -71,7 +131,11 @@ namespace EnterpriseComputingTeamProject1
 
 
                 //Redirect back to the updated students page
-                Response.Redirect("~/Games.aspx");
+                //Response.Redirect("~/Games.aspx");
+            }
+            else
+            {
+                
             }
         }
 
